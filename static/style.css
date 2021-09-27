@@ -1,0 +1,162 @@
+@font-face {
+	font-family: 'MonoLisa';
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap; /* Read next point */
+	unicode-range: U+000-5FF; /* Download only latin glyphs */
+	src: url('/MonoLisa-Regular.woff2') format('woff2'), url('/MonoLisa-Regular.woff') format('woff');
+}
+:root {
+	/* Define Colors as Colors */
+	/* Light Theme */
+	/* --white: #fffffe;
+  --black: #202020;
+  --teal: #4fc4cf;
+  --purple: #994ff3;
+  --yellow: #fbdd74;
+  /* Dark Theme */
+	--lightGrey: #f2eef5;
+	--lightBlack: #16161a;
+	--lightPurple: #7f5af0;
+	--darkGrey: #94a1b2;
+	--darkTeal: #2cb67d;
+
+	--white: #fffffe;
+	--black: #131428;
+	--teal: #42c6ff;
+	--purple: #ff15f0;
+
+	/* Define Color Inentions */
+	--background: var(--black);
+	--textColor: var(--white);
+	--primary: var(--teal);
+	--secondary: var(--purple);
+	--navBackground: var(--black);
+	/* Type */
+	--headingFont: 'Montserrat', monospace;
+	--bodyFont: 'MonoLisa', sans-serif;
+	--baseFontSize: 60%;
+	--h1: 3.052rem;
+	--h2: 2.441rem;
+	--h3: 1.953rem;
+	--h4: 1.563rem;
+	--h5: 1.25rem;
+	--smallText: 0.8rem;
+
+	/* Elevation */
+	--level-1: 0 1px 3px 0 rgba(66, 198, 255, 0.5), 0 1px 2px 0 rgba(66, 198, 255, 0.06);
+	--level-2: 0 4px 6px -1px rgba(66, 198, 255, 0.5), 0 2px 4px -1px rgba(66, 198, 255, 0.06);
+	--level-3: 0 10px 15px -3px rgba(66, 198, 255, 0.5), 0 4px 6px -2px rgba(66, 198, 255, 0.05);
+	--level-4: 0 20px 25px -5px rgba(66, 198, 255, 0.5), 0 10px 10px -5px rgba(66, 198, 255, 0.04);
+	--level-5: 0 25px 50px -12px rgba(66, 198, 255, 0.25);
+	--level-10: 0 3px 15px -3px rgba(66, 198, 255, 0.5), 0 0px 6px -2px rgba(66, 198, 255, 0.25);
+	/* Positioning */
+	--containerPadding: 2.5%;
+	--headerHeight: 0rem;
+	--borderRadius: 10px;
+}
+/* From TypeScale */
+
+html {
+	font-size: var(--baseFontSize);
+	box-sizing: border-box;
+} /*18px*/
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+body {
+	font-family: var(--bodyFont);
+	font-weight: 400;
+	line-height: 1.75;
+	background: var(--background);
+	color: var(--textColor);
+	padding: calc(3rem + var(--headerHeight)) var(--containerPadding);
+}
+
+p {
+	margin-bottom: 1rem;
+}
+
+p a,
+blockquote a {
+	color: var(--textColor);
+	text-decoration: none;
+	border-bottom: solid 2px var(--secondary);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	margin: 3rem 0 1.38rem;
+	font-family: var(--headingFont);
+	font-weight: 400;
+	line-height: 1.3;
+}
+
+h1 {
+	margin-top: 0;
+	font-size: var(--h1);
+}
+
+h2 {
+	font-size: var(--h2);
+}
+
+h3 {
+	font-size: var(--h3);
+}
+
+h4 {
+	font-size: var(--h4);
+}
+
+h5 {
+	font-size: var(--h5);
+}
+
+small,
+.text_small {
+	font-size: var(--smallText);
+}
+
+/* @media (prefers-color-scheme: light) {
+  :root {
+    --background: var(--lightGrey);
+    --textColor: var(--black);
+    --primary: var(--teal);
+    --secondary: var(--purple);
+    --navBackground: var(--black);
+    --cardBackground: var(--white);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: var(--lightBlack);
+    --textColor: var(--lightGrey);
+    --primary: var(--lightGrey);
+    --secondary: var(--darkTeal);
+    --navBackground: var(--lightPurple);
+    --cardBackground: var(--black);
+  }
+} */
+@media only screen and (min-width: 700px) {
+	:root {
+		--baseFontSize: 112.5%;
+	}
+}
+
+code {
+	font-family: 'MonoLisa', monospace;
+	font-size: calc(1em - 2px);
+	color: #c8aff4;
+	background: #252b32;
+	padding: 0.2em 0.4em;
+	border-radius: 2px;
+}
