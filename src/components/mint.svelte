@@ -20,7 +20,6 @@
 			networkName = network.name;
 		};
 		myEpicNFTContract.on('NewEpicNFTMinted', (from, tokenId) => {
-			console.log(from, tokenId.toNumber());
 			openSeaAddress = `https://testnets.opensea.io/assets/${contractAddress}/${tokenId.toNumber()}`;
 			dispatch('newEpicNFTMinted', { from, tokenId });
 		});
@@ -29,12 +28,9 @@
 
 	const mint = async () => {
 		try {
-			console.log('minting');
 			mining = true;
 			const nftTxn = await myEpicNFTContract.makeAnEpicNFT();
-			console.log('waiting');
 			await nftTxn.wait();
-			console.log(`Mined, see transaction: https://rinkeby.etherscan.io/tx/${nftTxn.hash}`);
 			mining = false;
 		} catch (error) {}
 	};
@@ -43,23 +39,26 @@
 {#if networkName != 'rinkeby'}
 	<h2>USE RINKEBY TEST NETWORK</h2>
 {:else if !mining}
-	<p>
-		<button on:click={mint}>Click to mint ⚒️ an NFT!</button>
-	</p>
 	{#if openSeaAddress}
+		<h3>Minted!</h3>
+		<p>It may take a few minutes for the image to show on the link below</p>
 		<p>
 			<a href={openSeaAddress}>OpenSea NFT</a>
 		</p>
+		<p>👆 👀 PEEP YOUR NEW ART! 👀 👆</p>
+		<p>OR</p>
+		<p>Mint another NFT 👇</p>
 	{/if}
+	<p>
+		<button on:click={mint}>Click to mint ⚒️ an NFT!</button>
+	</p>
 {:else}
 	<p>🤖 is currently minting ⚒️...</p>
-	<h3>
-		<span class="mining">⛏️⛏️⛏️ -- you can submit another wave in 15 min -- ⛏️⛏️⛏️</span>
-	</h3>
 {/if}
 
 <style>
-	h2 {
+	h2,
+	h3 {
 		text-align: center;
 	}
 	p {
